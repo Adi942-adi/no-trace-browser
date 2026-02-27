@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ghost-browser-lab"
+version = "0.2.0"
+description = "Privacy-focused ephemeral browser for cybersecurity lab use"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "PyQt5>=5.15.9,<5.16",
+  "PyQtWebEngine>=5.15.7,<5.16",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0,<9",
+  "pytest-qt>=4.4,<5",
+]
+
+[project.scripts]
+ghost-browser = "ghost_browser.main:run"
+
+[tool.setuptools.packages.find]
+include = ["ghost_browser*"]
